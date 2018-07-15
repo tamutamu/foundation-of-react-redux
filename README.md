@@ -9,7 +9,25 @@ yarn add webpack webpack-dev-server babel-core babel-loader babel-preset-react b
 
 ./node_modules/.bin/webpack-dev-server
 
-yarn add webpack-cli
+https://qiita.com/shota_abe/items/fbd6d988188442a4d11c
+
+webpack4からwebpack-cliが必要
+
+yarn add webpack-cli --dev
+
+webpack.config.jsのloadersがrulesとして名前に変わってる
+
+option --modeを追加してあげる必要がある development, production
+
+```
+"scripts": {
+  "start": "webpack-dev-server --mode development --open"
+},
+```
+
+### webpackについて
+
+https://qiita.com/soarflat/items/28bf799f7e0335b68186
 
 ### style guide
 

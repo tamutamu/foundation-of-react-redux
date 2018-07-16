@@ -1,9 +1,13 @@
-udemy_react
+### udemy_react
+
+#### yarnの追加
 
 yarn install
 https://yarnpkg.com/ja/docs/install#mac-stable
 
 yarn add react@15.6.1
+
+#### webpackの追加
 
 yarn add webpack webpack-dev-server babel-core babel-loader babel-preset-react babel-preset-es2015
 
@@ -25,9 +29,89 @@ option --modeを追加してあげる必要がある development, production
 },
 ```
 
+#### eslintの追加
+
+動画作成時のeslintのバージョン(3.19.0)では再現しませんでしたが、現在の最新バージョン(4.7.0)で再現できました。
+
+こちらは eslint --init  の中で npm install  が走っていて、それによって ./node_modules/.bin  フォルダが消えてしまっていたようです。
+
+1. バージョン指定する
+yarn add eslint@3.19.0 eslint-plugin-react
+
+2. yarn install
+
+* Atomプラグインのインストール
+⌘コマンドを押してから,カンマ押す
++install
+エディタから入れる方法とapmというコマンドラインから入れる方法がある
+
+* Airbnbのスタイルガイドがバージョン依存で動かない
+eslint@3.19.0ではairbnbのスタイルガイドが動かないのでeslintは5.1.0でうまく動いた(2018/7/15)
+
+#### sass scssの追加
+
+```
+yarn add node-sass style-loader css-loader sass-loader import-glob-loader extract-text-webpack-plugin
+```
+
+* extract-text-webpack-pluginはwebpack4で対応していなかったけど、alpha版で対応するようになった
+
+```
+Use Chunks.groupsIterable and filter by instanceof Entrypoint instead
+```
+
+https://github.com/webpack-contrib/extract-text-webpack-plugin/issues/701
+
+```
+yarn add --dev extract-text-webpack-plugin@next
+```
+
+webpack コマンド正常に動いた(2017/7/16 8:26)
+
+### Atomについて
+
+#### apm
+
+コマンドラインでatomのpluginをインストールできる
+
+```
+apm install es6-javascript intentions busy-signal linter-ui-default linter linter-eslint
+```
+
+#### 画面分割、閉じる、移動
+
+* 分割
+
+```
+command + k ↑↓←→
+```
+* 閉じる
+
+```
+command + w
+```
+
+* 移動
+
+```
+command + k command + ↑↓←→
+```
+
+#### indent
+
+Edit->Lines->Auto Indent
+
+#### タブ移動
+
+alt + command ←→
+
 ### webpackについて
 
 https://qiita.com/soarflat/items/28bf799f7e0335b68186
+
+### sass
+
+http://sass-lang.com/documentation/
 
 ### style guide
 

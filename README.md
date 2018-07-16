@@ -105,6 +105,22 @@ Edit->Lines->Auto Indent
 
 alt + command ←→
 
+### chrome
+
+#### javascriptコンソール
+
+command + option + j
+Sources
+
+#### eslint 集
+
+```
+jsx not allowed in files with extension '.js'
+```
+
+https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-filename-extension.md
+
+
 ### webpackについて
 
 https://qiita.com/soarflat/items/28bf799f7e0335b68186

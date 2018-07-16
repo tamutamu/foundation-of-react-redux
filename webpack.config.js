@@ -7,7 +7,7 @@ module.exports = [
     // webpack v4以降はmode指定しないと警告が出る
     mode: 'development',
     entry: [
-      './src/index.js',
+      './src/index.jsx',
     ],
     output: {
       path: publidDir,

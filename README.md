@@ -105,6 +105,12 @@ Edit->Lines->Auto Indent
 
 alt + command ←→
 
+#### jsxにjsの文法を効かせる
+
+```
+apm install language-javascript-jsx
+```
+
 ### chrome
 
 #### javascriptコンソール
@@ -119,6 +125,8 @@ jsx not allowed in files with extension '.js'
 ```
 
 https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-filename-extension.md
+
+
 
 
 ### webpackについて

@@ -111,8 +111,6 @@ alt + command ←→
 apm install language-javascript-jsx
 ```
 
-### chrome
-
 #### javascriptコンソール
 
 command + option + j
@@ -127,6 +125,9 @@ jsx not allowed in files with extension '.js'
 https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-filename-extension.md
 
 
+yarn check
+したら
+eslintのバージョンとairbnbのconfigのバージョンでerrorいわれる
 
 
 ### webpackについて

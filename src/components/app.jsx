@@ -20,10 +20,8 @@ class App extends Component {
 
   render() {
     return (
-      <div
-        onMouseOver={() => this.handleMouseOver()}
-        onMouseOut={() => this.handleMouseOut()}
-      >
+      <div>
+        <input type="text" value={this.state.name} />
         <Greeting name={this.state.name} />
       </div>
     );

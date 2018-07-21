@@ -68,6 +68,31 @@ yarn add --dev extract-text-webpack-plugin@next
 
 webpack コマンド正常に動いた(2017/7/16 8:26)
 
+
+### React
+
+#### react version
+
+reactのバージョン 16から
+https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-deprecated.md
+
+1. prop-typesをインストール → $ yarn add prop-types
+
+2. PropTypesを、reactではなくprop-typesから取得
+
+before
+
+```js
+import React, { PropTypes } from 'react';
+```
+
+after
+
+```js
+import React from 'react';
+import PropTypes from 'prop-types';
+```
+
 ### Atomについて
 
 #### apm
@@ -129,6 +154,18 @@ yarn check
 したら
 eslintのバージョンとairbnbのconfigのバージョンでerrorいわれる
 
+#### emmet
+
+htmlみたいにjsxもhtmlタグを補完する
+
+```
+apm install emmet
+```
+
+```
+'atom-text-editor[data-grammar="source js jsx"]':
+  'tab': 'emmet:expand-abbreviation-with-tab'
+```
 
 ### webpackについて
 

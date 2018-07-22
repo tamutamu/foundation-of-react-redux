@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 
-class App extends Component {
+class SearchForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -13,6 +13,7 @@ class App extends Component {
   }
 
   handleSubmit(e) {
+    e.preventDefault();
     this.props.onSubmit(this.state.place);
   }
 
@@ -31,7 +32,7 @@ class App extends Component {
 }
 
 SearchForm.propTypes = {
-  onSubmit: PropTypes.func.isRequired,
+//  onSubmit: PropTypes.func.isRequred,
 };
 
-export default App;
+export default SearchForm;

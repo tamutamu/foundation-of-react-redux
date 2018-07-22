@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Greeting from './greeting';
+import SearchForm from './SearchForm'
 
 class App extends Component {
   constructor(props) {
@@ -9,9 +9,18 @@ class App extends Component {
     }
   }
 
+  handlePlaceSubmit(place) {
+    console.log(place);
+  }
+
   render() {
     return (
-      
+      <div>
+        <h1>
+緯度軽度検索
+        </h1>
+        <SearchForm onSubmit={place => this.handlePlaceSubmit(place)} />
+      </div>
     );
   }
 }

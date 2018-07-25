@@ -22,9 +22,9 @@ class App extends Component {
         </h1>
         <SearchForm onSubmit={place => this.handlePlaceSubmit(place)} />
         <GeocodeResult
-        address={this.state.address}
-        lat={this.state.lat}
-        lng={this.state.lng}
+          address={this.state.address}
+          lat={this.state.lat}
+          lng={this.state.lng}
         />
       </div>
     );

@@ -3,7 +3,7 @@ import React from 'react'
 import PropTypes from 'prop-types';
 
 const GeocodeResult = ({ address, lat, lng }) => (
-  <ul>
+  <ul className="geocode-result">
     <li>住所：{address}</li>
     <li>緯度：{lat}</li>
     <li>経度：{lng}</li>

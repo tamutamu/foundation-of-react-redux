@@ -178,3 +178,9 @@ http://sass-lang.com/documentation/
 ### style guide
 
 https://github.com/iraycd/React-Redux-Styleguide
+
+### axios 
+
+```
+yarn add axios
+```

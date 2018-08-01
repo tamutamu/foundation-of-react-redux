@@ -179,8 +179,20 @@ http://sass-lang.com/documentation/
 
 https://github.com/iraycd/React-Redux-Styleguide
 
-### axios 
+### axios
 
 ```
 yarn add axios
 ```
+
+### Geocoding
+
+https://developers.google.com/maps/documentation/geocoding/intro
+
+### google maps
+
+https://developers.google.com/maps/documentation/javascript/tutorial
+
+#### reactでgoogle maps apiを使うことのできるライブラリ
+
+https://github.com/tomchentw/react-google-maps

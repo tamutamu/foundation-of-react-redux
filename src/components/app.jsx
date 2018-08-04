@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import SearchForm from './SearchForm';
 import GeocodeResult from './GeocodeResult';
 import Map from './Map';
+import HotelsTable from './HotelsTable';
 
 import { geocode } from '../domain/Geocoder';
 
@@ -13,7 +14,11 @@ class App extends Component {
       location: {
         lat: 35.6585805,
         lng: 139.7454329,
-      }
+      },
+      hotels: [
+        { id: 111, name: 'ホテルオークラ', url: 'https://google.com' },
+        { id: 222, name: 'アパホテル', url: 'https://yahoo.co.jp' },
+      ],
     };
   }
 
@@ -24,7 +29,7 @@ class App extends Component {
         lat: 0,
         lng: 0,
       },
-    })
+    });
   }
 
   handlePlaceSubmit(place) {
@@ -35,7 +40,7 @@ class App extends Component {
             this.setState({ address, location });
             break;
           case 'ZERO_RESULTS': {
-            this.setErrorMessage('結果が見つかりませんでした')
+            this.setErrorMessage('結果が見つかりませんでした');
             break;
           }
           default: {
@@ -53,11 +58,15 @@ class App extends Component {
         <h1 className="app-title">ホテル検索</h1>
         <SearchForm onSubmit={place => this.handlePlaceSubmit(place)} />
         <div className="result-area">
-          <Map location={this.state.location}/>
-          <GeocodeResult
-            address={this.state.address}
-            location={this.state.location}
-          />
+          <Map location={this.state.location} />
+          <div className="result-right">
+            <GeocodeResult
+              address={this.state.address}
+              location={this.state.location}
+            />
+            <h2>ホテル検索結果</h2>
+            <HotelsTable hotels={this.state.hotels} />
+          </div>
         </div>
       </div>
     );

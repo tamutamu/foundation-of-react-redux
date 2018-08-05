@@ -196,3 +196,17 @@ https://developers.google.com/maps/documentation/javascript/tutorial
 #### reactでgoogle maps apiを使うことのできるライブラリ
 
 https://github.com/tomchentw/react-google-maps
+
+### 楽天API
+
+#### 作成
+
+https://webservice.rakuten.co.jp/app/create
+
+udemy-react-redux
+
+https://www.udemy.com
+
+#### API詳細
+
+https://webservice.rakuten.co.jp/api/simplehotelsearch/

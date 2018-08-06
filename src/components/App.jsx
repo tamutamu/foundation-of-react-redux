@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import _ from 'lodash';
+
 import SearchForm from './SearchForm';
 import GeocodeResult from './GeocodeResult';
 import Map from './Map';
@@ -7,6 +9,8 @@ import HotelsTable from './HotelsTable';
 
 import { geocode } from '../domain/Geocoder';
 import { searchHotelByLocation } from '../domain/HotelRepository';
+
+const sortedHotels = (hotels, sortKey) => _.sortBy(hotels, h => h[sortKey]);
 
 class App extends Component {
   constructor(props) {
@@ -18,6 +22,7 @@ class App extends Component {
       },
       hotels: [
       ],
+      sortKey: 'price',
     };
   }
 
@@ -57,6 +62,13 @@ class App extends Component {
       });
   }
 
+  handleSortKeyChange(sortKey) {
+    this.setState({
+      sortKey,
+      hotels: sortedHotels(this.state.hotels, sortKey),
+    });
+  }
+
   render() {
     return (
       <div className="app">
@@ -71,6 +83,12 @@ class App extends Component {
             />
             <h2>ホテル検索結果</h2>
             <HotelsTable hotels={this.state.hotels} />
+            <HotelsTable
+              hotels={this.state.hotels}
+              sortKey={this.state.sortKey}
+              onSort={sortKey => this.handleSortKeyChange(sortKey)}
+            >
+            </HotelsTable>
           </div>
         </div>
       </div>

@@ -55,7 +55,7 @@ class App extends Component {
         return [];
       })
       .then((hotels) => {
-        this.setState({ hotels });
+        this.setState({ hotels: sortedHotels(hotels, this.state.sortKey) });
       })
       .catch(() => {
         this.setErrorMessage('通信に失敗しました');

@@ -3,6 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import HotelRow from './HotelRow';
+import HotelsClickableTh from './HotelsClickableTh';
 
 const HotelsTable = ({ hotels, sortKey, onSort }) => (
   <table>

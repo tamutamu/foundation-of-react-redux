@@ -216,3 +216,5 @@ https://webservice.rakuten.co.jp/api/simplehotelsearch/
 ```
 yarn add react-router-dom
 ```
+
+https://reacttraining.com/react-router/

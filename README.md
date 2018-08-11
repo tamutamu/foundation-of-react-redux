@@ -218,3 +218,7 @@ yarn add react-router-dom
 ```
 
 https://reacttraining.com/react-router/
+
+### Redux
+
+http://redux.js.org/

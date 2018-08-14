@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import _ from 'lodash';
 import queryString from 'query-string';
 
-import SearchForm from './SearchForm';
+import SearchForm from '../containers/SearchForm';
 // import GeocodeResult from './GeocodeResult';
 // import Map from './Map';
 // import HotelsTable from './HotelsTable';
@@ -29,17 +29,10 @@ class SearchPage extends Component {
   }
 
   componentDidMount() {
-    this.unsubscribe = this.props.store.subscribe(() => {
-      this.forceUpdate();
-    });
     // const place = this.getPlaceParam();
     // if (place) {
     //   this.stateSearch(place);
     // }
-  }
-
-  componentWillUnmount() {
-    this.unsubscribe();
   }
 
   getPlaceParam() {
@@ -61,10 +54,6 @@ class SearchPage extends Component {
     });
   }
 
-  handlePlaceChange(e) {
-    e.preventDefault();
-    this.props.store.dispatch({ type: 'CHANGE_PLACE', place: e.target.value });
-  }
 
   handlePlaceSubmit(e) {
     e.preventDefault();
@@ -106,13 +95,10 @@ class SearchPage extends Component {
   }
 
   render() {
-    const state = this.props.store.getState();
     return (
       <div className="search-page">
         <h1 className="app-title">ホテル検索</h1>
         <SearchForm
-          place={this.props.place}
-          onPlaceChange={e => this.handlePlaceChange(e)}
           onSubmit={e => this.handlePlaceSubmit(e)} />
         {/*
         <div className="result-area">
@@ -139,11 +125,6 @@ class SearchPage extends Component {
 SearchPage.propTypes = {
   history: PropTypes.shape({ push: PropTypes.func }).isRequired,
   location: PropTypes.shape({ search: PropTypes.string }).isRequired,
-  store: PropTypes.shape({
-    subscribe: PropTypes.func,
-    getState: PropTypes.func,
-    dispatch: PropTypes.func,
-  }).isRequired,
 };
 
 export default SearchPage;

@@ -222,3 +222,7 @@ https://reacttraining.com/react-router/
 ### Redux
 
 http://redux.js.org/
+
+#### redux devtools
+
+http://extension.remotedev.io/

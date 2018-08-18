@@ -26,3 +26,5 @@ const geocodeResult = (
       return state;
   }
 };
+
+export default combineReducers({ place, geocodeResult });

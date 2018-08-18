@@ -47,21 +47,23 @@ const mapDispatchToProps = dispatch => ({
             // return searchHotelByLocation(location);
             break;
           }
-          case: 'ZERO_RESULTS': {
+          case 'ZERO_RESULTS': {
             // this.setErrorMessage('結果が見つかりませんでした');
             break;
           }
           default: {
-            //this.setErrorMessage('エラーが発生しました');
+            // this.setErrorMessage('エラーが発生しました');
           }
         }
         return [];
       });
-      // .then((hotels)) => {
-      //   this.setState({ hotels: sortedHotels(hotels, this.state.sortKey) });
-      // })
-      // .catch(() => {
-      //   this.setErrorMessage('通信に失敗しました')
-      // });
+    // .then((hotels)) => {
+    //   this.setState({ hotels: sortedHotels(hotels, this.state.sortKey) });
+    // })
+    // .catch(() => {
+    //   this.setErrorMessage('通信に失敗しました')
+    // });
   },
 });
+
+export default connect(mapStateToProps, mapDispatchToProps)(SearchForm);

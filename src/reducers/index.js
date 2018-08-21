@@ -1,6 +1,16 @@
 import { combineReducers } from 'redux';
+import queryString from 'query-string';
 
-const place = (state = '東京タワー', action) => {
+const getPlaceParam = () => {
+  const params = queryString.parse(location.search);
+  const place = params.place;
+  if (place && place.length > 0) {
+    return place;
+  }
+  return null;
+};
+
+const place = (state = getPlaceParam() || '東京タワー', action) => {
   switch (action.type) {
     case 'CHANGE_PLACE':
       return action.place;
@@ -32,14 +42,14 @@ const geocodeResult = (
   }
 };
 
-const hotels = (state = [], (action) => {
+const hotels = (state = [], action) => {
   switch (action.type) {
     case 'CHANGE_HOTELS':
       return action.hotels;
     default:
       return state;
   }
-});
+};
 
 const sortKey = (state = 'price', action) => {
   switch (action.type) {

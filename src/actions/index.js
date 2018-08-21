@@ -7,7 +7,7 @@ export const setErrorMessage = message => dispatch => dispatch({ type: 'CHANGE_E
 
 export const setHotels = hotels => dispatch => dispatch({ type: 'CHANGE_HOTELS', hotels });
 
-export const setSortKey => sortKey => dispatch => dispatch({ type: 'CHANGE_SORT_KEY', sortKey });
+export const setSortKey = sortKey => dispatch => dispatch({ type: 'CHANGE_SORT_KEY', sortKey });
 
 export const startSearch = () => (dispatch, getState) => {
   geocode(getState().place)
@@ -26,11 +26,11 @@ export const startSearch = () => (dispatch, getState) => {
         }
       }
       return [];
+    })
+    .then((hotels) => {
+      dispatch(setHotels(hotels));
+    })
+    .catch(() => {
+      dispatch(setErrorMessage('通信に失敗しました'));
     });
-   .then((hotels)) => {
-     dispatch(setHotels(hotels));
-   })
-   .catch(() => {
-     dispatch('通信に失敗しました')
-   });
 };
